@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Prova prática Recuperação</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/js-av1-rec.js"></script>
+</head>
+
+<body>
+    <!-- INICIO DO JAVASCRIPT -->
+    <script type="text/javascript">
+        
+
+        const livro1 = new Livro();
+
+const menu = () => {
+    return Number(prompt("1 - Cadastrar livro"
+    +"\n2 - Reservar livro"
+    +"\n3 - Devolver livro"
+    +"\n4 - Consultar disponibilidade"
+    +"\n5 - Encerrar"
+    +"\nInforme a opção desejada:"));
+};
+
+// VARIAVEL DE ENTRADA
+let op = 0;
+
+// INICIO DO PROGRAMA
+alert ("Cadastre e veja a disponibilidade do livro, ou reserve ou devolva o mesmo.");
+    menu();
+
+// LET LIVROS
+while (op !== 5) {
+    op = menu();
+
+    switch (op) {
+        case 1:
+            livro1.codLivro = prompt("Qual o código do livro:");
+            livro1.descLivro = prompt("Qual a descrição do livro:");
+            livro1.qtdeDisponivel = Number(prompt("Qual a quantidade disponível:"));
+            break;
+
+        case 2:
+            const reserva = Number(prompt("Quantos exemplares deseja reservar?"));
+            livro1.reservarLivro(reserva);
+            break;
+
+        case 3:
+            const devolucao = Number(prompt("Quantos exemplares deseja devolver?"));
+            livro1.devolverLivro(devolucao);
+            break;
+
+        case 4:
+            alert(`Código do livro: ${livro1.codLivro}\nDescrição: ${livro1.descLivro}\nQuantidade disponível: ${livro1.qtdeDisponivel}`);
+            break;
+
+        case 5:
+            alert("Obrigado por usar nosso programa, Programa encerrado!");
+            break;
+
+        default:
+            alert("Opção inválida!");
+            break;
+    }
+}
+
+        alert("Programa finalizado com sucesso!");
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>
